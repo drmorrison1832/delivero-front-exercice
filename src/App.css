@@ -1,0 +1,98 @@
+@import "./fonts.css";
+
+:root {
+  --main-font-family: "Hack-Reg";
+  --main-bg-color: #242424;
+  --darker-bg-color: black;
+  --lighter-bg-color: #363535;
+  --main-font-color: greenyellow;
+  --main-line-color: greenyellow;
+  --other-line-color: orange;
+
+  font-size: 11px;
+  color: var(--main-font-color);
+  font-family: var(--main-font-family);
+  background-color: var(--main-bg-color);
+  /* border-color: var(--main-line-color); */
+}
+
+:nth-child(even),
+:nth-child(odd) {
+  padding: 0.1rem;
+  margin: 0.1rem;
+  /* border-color: var(--main-line-color); */
+  border-style: dashed;
+  border-width: 0.5px;
+
+  color: greenyellow;
+}
+
+:nth-child(odd) {
+  /* border-color: violet; */
+}
+
+:nth-child(even) {
+  /* border-color: greenyellow; */
+}
+
+.header {
+}
+
+.header-bottom {
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.restaurant-name {
+  font-size: 2rem;
+}
+
+.restaurant-description {
+  font-size: 1.3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.restaurant-description {
+  font-size: 1.3rem;
+}
+
+.meal-box {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.meal-text {
+  flex-grow: 1;
+}
+
+.meal-title {
+  font-size: 1.2rem;
+  /* background: goldenrod; */
+}
+.meal-description {
+  font-size: 1rem;
+}
+
+.meal-details {
+  display: flex;
+}
+
+.meal-price {
+  font-size: 1.3rem;
+}
+.meal-picture {
+  font-size: 0.8rem;
+}
+.meal-popular {
+  color: orange;
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
