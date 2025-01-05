@@ -4,7 +4,7 @@ const Menu = (props) => {
   const { categories } = props;
 
   return (
-    <div>
+    <div className="menu">
       {categories.map((category, index) => {
         if (category.meals.length > 0) {
           return (

@@ -3,11 +3,11 @@ const Header = (props) => {
   const { name, description, picture } = restaurantInfo;
 
   return (
-    <header className="header">
+    <header className="header ">
       <div className="header-top">
         <div className="deliveroo-logo">deliveroo</div>
       </div>
-      <div className="header bottom">
+      <div className="header-bottom container">
         <div className="restaurant-photo-container">
           <img className="restaurant-photo" src={picture} alt="" />
         </div>

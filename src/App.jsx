@@ -50,10 +50,10 @@ const App = () => {
     return (
       <>
         <Header restaurantInfo={restaurantInfo} />
-        <main>
+        <main className="container">
           <Menu categories={categories} setCategories={setCategories} />
+          <Basket />
         </main>
-        <Basket />
       </>
     );
   }
