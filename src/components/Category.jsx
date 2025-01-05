@@ -7,7 +7,7 @@ const Category = (props) => {
 
   return (
     <>
-      <h2>{categoryName}</h2>
+      <h2 className="category-name">{categoryName}</h2>
       {meals.map((meal) => {
         return <MenuItem meal={meal} key={meal.id} />;
       })}

@@ -5,6 +5,7 @@ import axios from "axios";
 // Components
 import Header from "./components/Header";
 import Menu from "./components/Menu";
+import Basket from "./components/Basket";
 
 // Icons
 // import { library } from "@fortawesome/fontawesome-svg-core";
@@ -49,7 +50,10 @@ const App = () => {
     return (
       <>
         <Header restaurantInfo={restaurantInfo} />
-        <Menu categories={categories} setCategories={setCategories} />
+        <main>
+          <Menu categories={categories} setCategories={setCategories} />
+        </main>
+        <Basket />
       </>
     );
   }
