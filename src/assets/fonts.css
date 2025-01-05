@@ -1,6 +1,8 @@
+@import "deliveroo-icons/style.css";
+
 @font-face {
   font-family: "Hack-Reg"; /* <== On donne un nom unique */
-  src: url("./assets/fonts/Hack-Regular.ttf") format("truetype");
+  src: url("fonts/Hack-Regular.ttf") format("truetype");
   /* <== On donne l'emplacement du fichier de police et on prÃ©cise le format pour Ãªtre sÃ»r que le navigateur ne se trompe pas en le devinant Ã  partir de l'extension du fichier */
 
   font-weight: normal; /* <== On dÃ©finit le poids de la police */

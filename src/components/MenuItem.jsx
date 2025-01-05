@@ -15,7 +15,11 @@ const MenuItem = (props) => {
 
         <div className="meal-details">
           <div className="meal-price">{formatedPrice} €</div>
-          {popular && <div className="meal-popular"> Popular </div>}
+          {popular && (
+            <div className="meal-popular">
+              <i className="icon-STAR_FILL"></i> Popular{" "}
+            </div>
+          )}
         </div>
       </div>
       {picture && (
