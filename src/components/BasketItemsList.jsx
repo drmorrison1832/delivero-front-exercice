@@ -10,15 +10,6 @@ const BasketItemsList = (props) => {
           <div className="basket-item-line" key={uuidv4()}>
             <span className="amount-changer">
               <i
-                className="icon-plus"
-                onClick={() => {
-                  const newBasket = [...basket];
-                  item.quantity++;
-                  setBasket(newBasket);
-                }}
-              ></i>
-              <span>{item.quantity}</span>
-              <i
                 className="icon-minus"
                 onClick={() => {
                   const newBasket = [...basket];
@@ -29,9 +20,18 @@ const BasketItemsList = (props) => {
                   setBasket(newBasket);
                 }}
               ></i>
+              <span>{item.quantity}</span>
+              <i
+                className="icon-plus"
+                onClick={() => {
+                  const newBasket = [...basket];
+                  item.quantity++;
+                  setBasket(newBasket);
+                }}
+              ></i>
             </span>
             <span className="item-name">{item.title}</span>
-            <div>
+            <div className="item-price">
               {(item.quantity * item.price)
                 .toFixed(2)
                 .toString()

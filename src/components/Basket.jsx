@@ -1,10 +1,11 @@
-import BasketContent from "./BasketContent";
+import BasketDetails from "./BasketDetails";
+import BasketMainButton from "./BasketMainButton";
 import { useState } from "react";
 
 const Basket = (props) => {
   const { basket, setBasket } = props;
 
-  const [showBasketContent, setShowBasketContent] = useState(false);
+  const [showBasketDetails, setShowBasketDetails] = useState(false);
 
   const [otherFees, setOtherFees] = useState([
     { name: "Frais de livraison", ratio: 0.1 },
@@ -32,7 +33,31 @@ const Basket = (props) => {
     .toString()
     .replace(".", ",");
 
-  if (basket.length === 0) {
+  return (
+    <div className="basket-section">
+      <BasketDetails
+        basket={basket}
+        setBasket={setBasket}
+        showBasketDetails={showBasketDetails}
+        setShowBasketDetails={setShowBasketDetails}
+        otherFees={otherFees}
+        totalAmount={totalAmount}
+      />
+      <BasketMainButton
+        basket={basket}
+        totalItems={totalItems}
+        totalAmountFormatted={totalAmountFormatted}
+        showBasketDetails={showBasketDetails}
+        setShowBasketDetails={setShowBasketDetails}
+      />
+    </div>
+  );
+};
+
+export default Basket;
+
+/* 
+ if (basket.length === 0) {
     return (
       <div className="basket-section">
         <div className="basket-button basket-is-empty">
@@ -51,13 +76,13 @@ const Basket = (props) => {
     );
   }
 
-  if (basket.length > 0 && !showBasketContent) {
+  if (basket.length > 0 && !showBasketDetails) {
     return (
       <div className="basket-section ">
         <div
           className="basket-button basket-has-content"
           onClick={() => {
-            setShowBasketContent(true);
+            setShowBasketDetails(true);
           }}
         >
           <div className="number-of-items-on-button">{totalItems}</div>
@@ -68,13 +93,13 @@ const Basket = (props) => {
     );
   }
 
-  if (basket.length > 0 && showBasketContent) {
+  if (basket.length > 0 && showBasketDetails) {
     return (
       <div className="basket-section">
-        <BasketContent
+        <BasketDetails
           basket={basket}
           setBasket={setBasket}
-          setShowBasketContent={setShowBasketContent}
+          setShowBasketDetails={setShowBasketDetails}
           otherFees={otherFees}
           totalAmount={totalAmount}
         />
@@ -93,6 +118,4 @@ const Basket = (props) => {
       </div>
     );
   }
-};
-
-export default Basket;
+ */
