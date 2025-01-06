@@ -1,29 +1,30 @@
-const BasketContent = () => {
+import BasketItemsList from "./BasketItemsList";
+import BasketCheckOutCalculation from "./BasketCheckOutCalculation";
+
+const BasketContent = (props) => {
+  const { setShowBasketContent, basket, setBasket, otherFees, totalAmount } =
+    props;
+
+  if (basket.length === 0) {
+    return <div className="basket-details">Votre panier est vide</div>;
+  }
   return (
     <div className="basket-details">
-      <div className="close-modal">X</div>
-      <div className="basket-items-list">
-        <div className="basket-item">
-          <div>
-            <span className="amount-changer">+ o -</span> Brunch vegan
-          </div>
-          <div>25,00 €</div>
-        </div>
+      <div
+        className="close-modal"
+        onClick={() => {
+          setShowBasketContent(false);
+        }}
+      >
+        X
       </div>
-      <div className="basket-checkout-calculations">
-        <div className="basket-checkout-line">
-          <div>Sous-total</div>
-          <div>25,00 €</div>
-        </div>
-        <div className="basket-checkout-line">
-          <div> Frais de livraison</div>
-          <div>2,50 €</div>
-        </div>
-      </div>
+      <BasketItemsList basket={basket} setBasket={setBasket} />
+      <BasketCheckOutCalculation basket={basket} otherFees={otherFees} />
+
       <div className="basket-total-section">
         <div className="basket-total-line">
           <div>Total</div>
-          <div>27,50 €</div>
+          <div>{totalAmount.toFixed(2).toString().replace(".", ",")} €</div>
         </div>
       </div>
     </div>

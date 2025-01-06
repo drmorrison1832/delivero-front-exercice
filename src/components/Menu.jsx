@@ -1,7 +1,7 @@
 import Category from "./Category";
 
 const Menu = (props) => {
-  const { categories } = props;
+  const { categories, basket, setBasket } = props;
 
   return (
     <div className="menu">
@@ -9,7 +9,11 @@ const Menu = (props) => {
         if (category.meals.length > 0) {
           return (
             <div className="category-section" key={index}>
-              <Category category={category} />
+              <Category
+                category={category}
+                basket={basket}
+                setBasket={setBasket}
+              />
             </div>
           );
         }

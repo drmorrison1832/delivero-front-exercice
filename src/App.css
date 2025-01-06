@@ -126,6 +126,7 @@
   font-size: 1.5em;
 }
 .meal-description {
+  font-size: 1.2rem;
   color: var(--font-color-2);
   flex-shrink: 1;
   overflow: hidden;
@@ -149,8 +150,8 @@
 }
 
 i {
-  font-size: 1.5rem;
-  vertical-align: bottom;
+  font-size: 1.8rem;
+  vertical-align: middle;
 }
 
 .meal-photo-container {
@@ -226,6 +227,10 @@ body {
   background-color: var(--bg-color-4);
 }
 
+.hide-basket-content {
+  display: none;
+}
+
 .number-of-items-on-button {
   padding: 1em 0.8em;
   height: 30px;
@@ -266,13 +271,32 @@ body {
   border-bottom: 1px solid #000;
 }
 
-.basket-item,
 .basket-checkout-line,
 .basket-total-line {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.basket-item-line {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 10px;
+}
+
+.amount-changer {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+}
+
+.item-name {
+  flex-grow: 1;
 }
 
 /* ### */
@@ -314,6 +338,19 @@ body {
     position: sticky;
     top: 25px;
     margin-top: 25px;
+    flex-direction: column-reverse;
+  }
+
+  .close-modal {
+    display: none;
+  }
+
+  .basket-button {
+    margin-bottom: 20px;
+  }
+
+  .basket-details {
+    min-height: 150px;
   }
 }
 

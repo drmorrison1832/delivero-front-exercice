@@ -17,6 +17,7 @@ const App = () => {
   // Create states
   const [restaurantInfo, setRestaurantInfo] = useState(undefined);
   const [categories, setCategories] = useState(undefined);
+  const [basket, setBasket] = useState([]);
 
   // Console Logs
   console.log("App (re)started", new Date().getMilliseconds());
@@ -51,8 +52,13 @@ const App = () => {
       <>
         <Header restaurantInfo={restaurantInfo} />
         <main className="container">
-          <Menu categories={categories} setCategories={setCategories} />
-          <Basket />
+          <Menu
+            categories={categories}
+            setCategories={setCategories}
+            basket={basket}
+            setBasket={setBasket}
+          />
+          <Basket basket={basket} setBasket={setBasket} />
         </main>
       </>
     );

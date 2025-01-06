@@ -1,14 +1,23 @@
 const MenuItem = (props) => {
-  const { meal } = props;
+  const { meal, basket, setBasket } = props;
 
   const { id, title, description, price, picture, popular } = meal;
 
   const formatedPrice = Number(price).toFixed(2).toString().replace(".", ",");
 
-  console.log();
+  function addToBasket() {
+    const newBasket = [...basket];
+    const index = newBasket.findIndex((item) => item.id === id);
+    if (index === -1) {
+      newBasket.push({ id: id, title: title, price: price, quantity: 1 });
+    } else {
+      newBasket[index].quantity++;
+    }
+    setBasket(newBasket);
+  }
 
   return (
-    <div className="meal-box">
+    <div className="meal-box" onClick={addToBasket}>
       <div className="meal-text">
         <div className="meal-title">{title}</div>
         {description && <div className="meal-description">{description} </div>}
@@ -17,7 +26,7 @@ const MenuItem = (props) => {
           <div className="meal-price">{formatedPrice} €</div>
           {popular && (
             <div className="meal-popular">
-              <i className="icon-STAR_FILL"></i> Popular{" "}
+              <i className="icon-STAR_FILL"></i> Popular
             </div>
           )}
         </div>
