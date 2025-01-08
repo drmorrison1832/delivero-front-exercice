@@ -1,9 +1,10 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-const apiKey = import.meta.env.VITE_API_KEY;
+// const apiKey = import.meta.env.VITE_API_KEY;
 
 // Components
+import Commit from "./components/Commit";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Basket from "./components/Basket";
@@ -23,7 +24,7 @@ const App = () => {
   const [basket, setBasket] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Console Logs
+  // Console logs
   console.log("App (re)started", new Date().getMilliseconds());
 
   // Effects
@@ -32,19 +33,10 @@ const App = () => {
     console.log("App: RetrieveData...", new Date().getMilliseconds());
 
     axios
-      .get("https://back--deliveroo-back-end--44tkxvkbbxk5.code.run/simple")
-      /* .get(
-        "https://lereacteur-bootcamp-api.herokuapp.com/api/deliveroo/menu/paris/3eme-temple/sub-arc-subway-rambuteau?day=today&geohash=u09wj8rk5bqr&time=ASAP",
-        {
-          headers: {
-            Authorization: `Bearer ${apiKey}`,
-          },
-        }
-       )*/
+      .get("https://back--deliveroo-back-end--44tkxvkbbxk5.code.run/deliveroo")
+      // .get("http://localhost:3200/deliveroo")
       .then((response) => {
-        console.log(response.data);
         setRestaurantInfo(response.data.restaurant);
-
         setCategories(response.data.categories);
         setIsLoading(false);
       })
@@ -59,9 +51,13 @@ const App = () => {
   console.log("App: rendering...", new Date().getMilliseconds());
 
   return isLoading ? (
-    <h1>Page is loading...</h1>
+    <>
+      <Commit />
+      <h1>Page is loading...</h1>
+    </>
   ) : (
     <>
+      <Commit />
       <Header restaurantInfo={restaurantInfo} />
       <main className="container">
         <Menu
