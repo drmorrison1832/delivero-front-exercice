@@ -8,6 +8,7 @@ import Commit from "./components/Commit";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Basket from "./components/Basket";
+import { config } from "@fortawesome/fontawesome-svg-core";
 
 // Icons
 // import { library } from "@fortawesome/fontawesome-svg-core";
@@ -32,9 +33,16 @@ const App = () => {
   useEffect(function retrieveData() {
     console.log("App: RetrieveData...", new Date().getMilliseconds());
 
+    let resto = prompt(
+      "Quel resto ?\nFormat: paris/1er-louvre/le-pain-quotidien-saint-honore"
+    );
+
     axios
-      .get("https://back--deliveroo-back-end--44tkxvkbbxk5.code.run/deliveroo")
-      // .get("http://localhost:3200/deliveroo")
+
+      .get(
+        `https://back--deliveroo-back-end--44tkxvkbbxk5.code.run/?resto=${resto}`
+      )
+      // .get(`http://localhost:3200/?resto=${resto}`)
       .then((response) => {
         setRestaurantInfo(response.data.restaurant);
         setCategories(response.data.categories);
