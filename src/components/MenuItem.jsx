@@ -33,7 +33,7 @@ const MenuItem = (props) => {
       </div>
       {picture && (
         <div className="meal-photo-container">
-          <img className="meal-photo" src={picture} alt="" />
+          <img className="meal-photo" src={picture} alt="Meal photo" />
         </div>
       )}
     </div>

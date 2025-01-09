@@ -9,7 +9,11 @@ const Header = (props) => {
       </div>
       <div className="header-bottom container">
         <div className="restaurant-photo-container">
-          <img className="restaurant-photo" src={picture} alt="" />
+          <img
+            className="restaurant-photo"
+            src={picture}
+            alt="Restaurant photo"
+          />
         </div>
         <div className="restaurant-text">
           <div className="restaurant-name">{name}</div>
