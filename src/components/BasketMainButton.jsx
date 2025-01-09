@@ -29,7 +29,7 @@ const BasketMainButton = (props) => {
           }}
         >
           <div className="number-of-items-on-button">{totalItems}</div>
-          <div className="basket-button-label">Voir le panier</div>
+          <div className="basket-button-label">Valider mon panier</div>
           <div className="total-on-button">{totalAmountFormatted} €</div>
         </div>
         {/* Computer */}

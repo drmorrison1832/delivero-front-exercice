@@ -110,6 +110,11 @@
   border-radius: 5px;
 }
 
+.meal-box:hover {
+  box-shadow: 0 22px 24px 0 rgba(46, 51, 51, 0.07);
+  transition-duration: 0.3s;
+}
+
 .meal-text {
   flex-grow: 1;
   flex-shrink: 1;
@@ -119,7 +124,7 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  border: 2px solid white;
+  border: 0.4px dashed black;
 }
 
 .meal-title {
@@ -127,7 +132,7 @@
 }
 .meal-description {
   font-size: 1.2rem;
-  color: var(--font-color-2);
+  color: var(--font-color-5);
   flex-shrink: 1;
   overflow: hidden;
   margin-bottom: 2rem;
@@ -190,6 +195,8 @@ body {
   height: fit-content;
   font-size: 1.5rem;
   background-color: var(--bg-color-1);
+  box-shadow: 0 22px 24px 0 rgba(46, 51, 51, 0.07);
+
   display: flex;
   flex-direction: column;
   justify-content: center;

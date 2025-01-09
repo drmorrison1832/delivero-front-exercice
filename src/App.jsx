@@ -8,7 +8,6 @@ import Commit from "./components/Commit";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Basket from "./components/Basket";
-import { config } from "@fortawesome/fontawesome-svg-core";
 
 // Icons
 // import { library } from "@fortawesome/fontawesome-svg-core";
