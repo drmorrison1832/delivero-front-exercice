@@ -12,7 +12,7 @@ const BasketCheckOutCalculation = (props) => {
     <div className="basket-checkout-calculations">
       <div className="basket-checkout-line">
         <div>Sous-total</div>
-        <div>{subtotal.toFixed(2).toString().replace(".", ",")} €</div>
+        <div>{formatPrice(subtotal)}</div>
       </div>
       {otherFees.map((fee, index) => {
         const amount = fee.price ? fee.price : fee.ratio * subtotal;

@@ -137,16 +137,13 @@
   color: var(--font-color-2);
   flex-shrink: 1;
   overflow: hidden;
-  margin-bottom: 2rem;
-  text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  -ms-text-overflow: ellipsis;
 }
 
 .meal-details {
+  margin-top: 2rem;
   flex-grow: 1;
   display: flex;
-  align-items: center;
+  /* align-items: baseline; */
   gap: 10px;
 }
 

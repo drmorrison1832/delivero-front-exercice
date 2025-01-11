@@ -8,16 +8,10 @@ import Commit from "./components/Commit";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Basket from "./components/Basket";
-// import { config } from "@fortawesome/fontawesome-svg-core";
-
-// Icons
-// import { library } from "@fortawesome/fontawesome-svg-core";
-// import { faTrash } from "@fortawesome/free-solid-svg-icons";
-// import { faRotateLeft } from "@fortawesome/free-solid-svg-icons";
-// library.add(faTrash, faRotateLeft);
 
 const App = () => {
-  // Import API key
+  // Console logs
+  console.log("App (re)started", new Date().getMilliseconds());
 
   // Create states
   const [restaurantInfo, setRestaurantInfo] = useState(undefined);
@@ -26,11 +20,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [errorLoading, setErrorLoading] = useState(false);
 
-  // Console logs
-  console.log("App (re)started", new Date().getMilliseconds());
-
   // Effects
-
   async function retrieveData() {
     console.log("App: RetrieveData...", new Date().getMilliseconds());
 

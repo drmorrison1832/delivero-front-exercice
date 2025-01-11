@@ -3,21 +3,28 @@ import formatPrice from "../assets/tools/formatPrice";
 const MenuItem = (props) => {
   const { meal, basket, setBasket } = props;
 
-  let { id, title, description, price, picture, popular } = meal;
+  let { title, description, price, picture, popular } = meal;
 
-  function addToBasket() {
+  function addItemToBasket(itemToAdd) {
+    console.log("addItemToBasket...");
     const newBasket = [...basket];
-    const index = newBasket.findIndex((item) => item.id === id);
-    if (index === -1) {
-      newBasket.push({ id: id, title: title, price: price, quantity: 1 });
-    } else {
-      newBasket[index].quantity++;
-    }
+
+    let foundInBasket = newBasket.find((item) => item.id === itemToAdd.id);
+
+    foundInBasket
+      ? foundInBasket.quantity++
+      : newBasket.push({ ...itemToAdd, quantity: 1 });
+
     setBasket(newBasket);
   }
 
   return (
-    <div className="meal-box" onClick={addToBasket}>
+    <div
+      className="meal-box"
+      onClick={() => {
+        addItemToBasket(meal);
+      }}
+    >
       <div className="meal-text">
         <div className="meal-title">{title}</div>
         {description && <div className="meal-description">{description}</div>}
