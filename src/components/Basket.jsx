@@ -28,11 +28,7 @@ const Basket = (props) => {
     return acc + fee.ratio * subtotal;
   }, 0);
 
-  const totalAmount = euros(subtotal + totalFees);
-
-  function euros(amount) {
-    return amount.toFixed(2).toString().replace(".", ",");
-  }
+  const totalAmount = subtotal + totalFees;
 
   return (
     <div className="basket-section">
@@ -48,7 +44,6 @@ const Basket = (props) => {
         basket={basket}
         amountOfItems={amountOfItems}
         totalAmount={totalAmount}
-        showBasketDetails={showBasketDetails}
         setShowBasketDetails={setShowBasketDetails}
       />
     </div>

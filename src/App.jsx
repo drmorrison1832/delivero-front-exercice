@@ -44,8 +44,6 @@ const App = () => {
       );
       // .get(`http://localhost:3200/?resto=${resto}`)
 
-      console.log(response);
-
       setRestaurantInfo(response.data.restaurant);
       setCategories(response.data.categories);
       setIsLoading(false);

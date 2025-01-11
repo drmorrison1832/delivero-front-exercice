@@ -1,9 +1,9 @@
+import formatPrice from "../assets/tools/formatPrice";
+
 const MenuItem = (props) => {
   const { meal, basket, setBasket } = props;
 
-  const { id, title, description, price, picture, popular } = meal;
-
-  const formatedPrice = Number(price).toFixed(2).toString().replace(".", ",");
+  let { id, title, description, price, picture, popular } = meal;
 
   function addToBasket() {
     const newBasket = [...basket];
@@ -20,10 +20,10 @@ const MenuItem = (props) => {
     <div className="meal-box" onClick={addToBasket}>
       <div className="meal-text">
         <div className="meal-title">{title}</div>
-        {description && <div className="meal-description">{description} </div>}
+        {description && <div className="meal-description">{description}</div>}
 
         <div className="meal-details">
-          <div className="meal-price">{formatedPrice} €</div>
+          <div className="meal-price">{formatPrice(price)}</div>
           {popular && (
             <div className="meal-popular">
               <i className="icon-STAR_FILL"></i> Popular

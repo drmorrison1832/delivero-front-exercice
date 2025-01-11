@@ -1,3 +1,5 @@
+import formatPrice from "../assets/tools/formatPrice";
+
 const BasketCheckOutCalculation = (props) => {
   const { otherFees, basket } = props;
 
@@ -18,7 +20,7 @@ const BasketCheckOutCalculation = (props) => {
         return (
           <div key={index} className="basket-checkout-line">
             <div> {fee.name}</div>
-            <div>{amount.toFixed(2).toString().replace(".", ",")} €</div>
+            <div>{formatPrice(amount)}</div>
           </div>
         );
       })}

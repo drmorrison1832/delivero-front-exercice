@@ -1,3 +1,5 @@
+import formatPrice from "../assets/tools/formatPrice";
+
 import BasketItemsList from "./BasketItemsList";
 import BasketCheckOutCalculation from "./BasketCheckOutCalculation";
 
@@ -10,8 +12,6 @@ const BasketDetails = (props) => {
     otherFees,
     totalAmount,
   } = props;
-
-  console.log("showBasketDetails", showBasketDetails);
 
   if (basket.length === 0) {
     return (
@@ -39,7 +39,7 @@ const BasketDetails = (props) => {
         <div className="basket-total-section">
           <div className="basket-total-line">
             <div>Total</div>
-            <div>{totalAmount} €</div>
+            <div>{formatPrice(totalAmount)}</div>
           </div>
         </div>
       </div>

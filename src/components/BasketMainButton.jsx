@@ -1,11 +1,7 @@
+import formatPrice from "../assets/tools/formatPrice";
+
 const BasketMainButton = (props) => {
-  const {
-    basket,
-    amountOfItems,
-    totalAmount,
-    showBasketDetails,
-    setShowBasketDetails,
-  } = props;
+  const { basket, amountOfItems, totalAmount, setShowBasketDetails } = props;
 
   if (basket.length === 0) {
     return (
@@ -30,7 +26,7 @@ const BasketMainButton = (props) => {
         >
           <div className="number-of-items-on-button">{amountOfItems}</div>
           <div className="basket-button-label">Valider mon panier</div>
-          <div className="total-on-button">{totalAmount} €</div>
+          <div className="total-on-button">{formatPrice(totalAmount)} €</div>
         </div>
         {/* Computer */}
         <div className="basket-button enabled-button-desktop desktop-only ">
