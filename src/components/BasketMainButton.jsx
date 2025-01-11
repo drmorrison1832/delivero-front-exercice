@@ -1,8 +1,8 @@
 const BasketMainButton = (props) => {
   const {
     basket,
-    totalItems,
-    totalAmountFormatted,
+    amountOfItems,
+    totalAmount,
     showBasketDetails,
     setShowBasketDetails,
   } = props;
@@ -28,9 +28,9 @@ const BasketMainButton = (props) => {
             setShowBasketDetails(true);
           }}
         >
-          <div className="number-of-items-on-button">{totalItems}</div>
+          <div className="number-of-items-on-button">{amountOfItems}</div>
           <div className="basket-button-label">Valider mon panier</div>
-          <div className="total-on-button">{totalAmountFormatted} €</div>
+          <div className="total-on-button">{totalAmount} €</div>
         </div>
         {/* Computer */}
         <div className="basket-button enabled-button-desktop desktop-only ">

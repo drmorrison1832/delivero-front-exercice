@@ -23,11 +23,3 @@ const Menu = (props) => {
 };
 
 export default Menu;
-
-// {categories.map((category, index) => {
-//     return (
-//       <div key={index}>
-//         <Category category={category} />
-//       </div>
-//     );
-//   })}

@@ -39,7 +39,7 @@ const BasketDetails = (props) => {
         <div className="basket-total-section">
           <div className="basket-total-line">
             <div>Total</div>
-            <div>{totalAmount.toFixed(2).toString().replace(".", ",")} €</div>
+            <div>{totalAmount} €</div>
           </div>
         </div>
       </div>

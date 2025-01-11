@@ -5,9 +5,11 @@
   --bg-color-1: #ffffff;
   --bg-color-2: #f2f5f5;
   --bg-color-3: #0bcdbd;
+  --bg-color-3b: #2cd9ca;
   --bg-color-4: #d3d3d3;
   --bg-color-5: #822774;
-  --bg-color-6: #36054f;
+  --bg-color-6: #8f3d82;
+  --bg-color-7: #36054f;
   --font-color-1: #2e3333;
   --font-color-2: #868a8a;
   --font-color-3: #0bcdbd;
@@ -113,6 +115,7 @@
 .meal-box:hover {
   box-shadow: 0 22px 24px 0 rgba(46, 51, 51, 0.07);
   transition-duration: 0.3s;
+  cursor: pointer;
 }
 
 .meal-text {
@@ -124,7 +127,6 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  border: 0.4px dashed black;
 }
 
 .meal-title {
@@ -136,6 +138,9 @@
   flex-shrink: 1;
   overflow: hidden;
   margin-bottom: 2rem;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
 }
 
 .meal-details {
@@ -234,9 +239,18 @@ body {
   justify-content: space-between;
 }
 
+.enabled-button-mobile:hover {
+  background-color: var(--bg-color-6);
+}
+
 .enabled-button-desktop {
   color: var(--font-color-5);
   background-color: var(--bg-color-3);
+}
+
+.enabled-button-desktop:hover {
+  color: var(--font-color-5);
+  background-color: var(--bg-color-3b);
 }
 
 .basket-is-empty {
@@ -249,7 +263,7 @@ body {
   width: 40px;
   margin-right: 60px;
   flex-grow: 0;
-  background: var(--bg-color-6);
+  background: var(--bg-color-7);
   display: flex;
   justify-content: center;
   align-items: center;

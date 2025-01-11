@@ -8,6 +8,7 @@ import Commit from "./components/Commit";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Basket from "./components/Basket";
+// import { config } from "@fortawesome/fontawesome-svg-core";
 
 // Icons
 // import { library } from "@fortawesome/fontawesome-svg-core";
@@ -23,40 +24,45 @@ const App = () => {
   const [categories, setCategories] = useState(undefined);
   const [basket, setBasket] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [errorLoading, setErrorLoading] = useState(false);
 
   // Console logs
   console.log("App (re)started", new Date().getMilliseconds());
 
   // Effects
 
-  useEffect(function retrieveData() {
+  async function retrieveData() {
     console.log("App: RetrieveData...", new Date().getMilliseconds());
 
     let resto = prompt(
       "Quel resto ?\nFormat: paris/1er-louvre/le-pain-quotidien-saint-honore"
     );
 
-    axios
-
-      .get(
+    try {
+      let response = await axios.get(
         `https://back--deliveroo-back-end--44tkxvkbbxk5.code.run/?resto=${resto}`
-      )
+      );
       // .get(`http://localhost:3200/?resto=${resto}`)
-      .then((response) => {
-        setRestaurantInfo(response.data.restaurant);
-        setCategories(response.data.categories);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error.message);
-        setIsLoading(true);
-      });
+
+      console.log(response);
+
+      setRestaurantInfo(response.data.restaurant);
+      setCategories(response.data.categories);
+      setIsLoading(false);
+    } catch (err) {
+      console.log(err);
+      setErrorLoading(true);
+      setIsLoading(false);
+    }
+  }
+  useEffect(() => {
+    retrieveData();
   }, []);
 
-  // Declare functions
-
   console.log("App: rendering...", new Date().getMilliseconds());
-
+  if (errorLoading) {
+    return <h1>Error loading content. Please verify API request.</h1>;
+  }
   return isLoading ? (
     <>
       <Commit />
